@@ -1,0 +1,20 @@
+name: Auto News Publisher
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "*/15 * * * *"
+
+jobs:
+  publish-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Run Auto News
+        run: |
+          echo "Checking news sources..."
+          echo "Publishing new news..."
